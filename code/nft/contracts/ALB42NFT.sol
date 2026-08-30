@@ -2,6 +2,7 @@
 pragma solidity ^0.8.34;
 
 import "./utils/Base64.sol";
+import "./utils/SvgAssets.sol";
 
 interface IERC721Receiver
 {
@@ -34,6 +35,9 @@ contract ALB42NFT
 	// L'adresse du propriétaire du contrat, qui est l'adresse qui a déployé le contrat.
 	address public owner;
 
+	// Stockage du style de chaque token
+	mapping(uint256 => uint8) private styleOf; // 0 = "lgbt", 1 = "matrix", 2 = "gold"
+
 	// Les événements sont utilisés pour notifier les clients de l'application
 	// des changements d'état du contrat.
 
@@ -45,9 +49,35 @@ contract ALB42NFT
 		owner = msg.sender;
 	}
 
-	// Fonction pour créer un nouveau token et l'attribuer à une adresse spécifique
-	function safeMint(address to) public returns (uint256 tokenId)
+	// Fonction pour récupérer le style d'un token spécifique
+	function getStyle(uint256 tokenId) public view returns (uint8)
 	{
+		// Vérifie que le token existe en s'assurant que l'adresse du propriétaire
+		// n'est pas l'adresse zéro
+		require(ownerOf[tokenId] != address(0), "Le token n'existe pas.");
+
+		return styleOf[tokenId];
+	}
+
+	// Fonction pour générer le SVG correspondant à un style spécifique
+	function _svgFor(uint8 style) internal pure returns (string memory)
+	{
+		if (style == 0)
+			return (SvgAssets.LGBT);
+		else if (style == 1)
+			return (SvgAssets.MATRIX);
+		else if (style == 2)
+			return (SvgAssets.GOLD);
+
+		revert("Style inconnu");
+	}
+
+	// Fonction pour créer un nouveau token et l'attribuer à une adresse spécifique
+	function safeMint(address to, uint8 style) public returns (uint256 tokenId)
+	{
+		// Vérifie que le style est compris entre 0 et 2
+		require(style < 3, "Le style doit etre compris entre 0 et 2.");
+
 		// Vérifie que l'adresse qui appelle la fonction est le propriétaire du contrat
 		require(msg.sender == owner, "Seul le proprietaire peut creer des tokens.");
 
@@ -65,9 +95,11 @@ contract ALB42NFT
 		}
 
 		// Crée un nouveau token et l'attribue à l'adresse spécifiée
+		// Le style du token est également stocké dans le mapping styleOf.
 		tokenId = nextTokenId++;
 		ownerOf[tokenId] = to;
 		balanceOf[to]++;
+		styleOf[tokenId] = style;
 
 		// Envoyer l'information a la blockchain
 		emit Transfer(address(0), to, tokenId);

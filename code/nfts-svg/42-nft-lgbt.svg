@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <g>
+    <rect x="0" y="0"          width="400" height="66.667" fill="#E40303"/>
+    <rect x="0" y="66.667"     width="400" height="66.667" fill="#FF8C00"/>
+    <rect x="0" y="133.333"    width="400" height="66.667" fill="#FFED00"/>
+    <rect x="0" y="200"        width="400" height="66.667" fill="#008026"/>
+    <rect x="0" y="266.667"    width="400" height="66.667" fill="#004DFF"/>
+    <rect x="0" y="333.333"    width="400" height="66.667" fill="#750787"/>
+  </g>
+
+  <g fill="#000100" filter="url(#soft-shadow)"
+     transform="translate(70,108.75) scale(0.8045) translate(-20.39,-10.53)">
+    <polygon points="199.02 10.53 139.48 10.53 20.39 129.61 20.39 177.82 139.48 177.82 139.48 237.36 199.02 237.36 199.02 129.61 79.94 129.61 199.02 10.53"/>
+    <polygon points="224.54 70.07 284.08 10.53 224.54 10.53 224.54 70.07"/>
+    <polygon points="343.62 70.07 343.62 10.53 284.08 10.53 284.08 70.07 224.54 129.61 224.54 189.16 284.08 189.16 284.08 129.61 343.62 70.07"/>
+    <polygon points="343.62 129.61 284.08 189.16 343.62 189.16 343.62 129.61"/>
+  </g>
+</svg>

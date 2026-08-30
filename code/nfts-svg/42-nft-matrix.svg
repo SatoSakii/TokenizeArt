@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020403"/>
+      <stop offset="100%" stop-color="#031a0d"/>
+    </linearGradient>
+
+    <pattern id="scan" width="400" height="4" patternUnits="userSpaceOnUse">
+      <rect width="400" height="2" fill="#00ff66" opacity="0.04"/>
+      <rect y="2" width="400" height="2" fill="#000000" opacity="0.15"/>
+    </pattern>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <g id="mark">
+      <polygon points="199.02 10.53 139.48 10.53 20.39 129.61 20.39 177.82 139.48 177.82 139.48 237.36 199.02 237.36 199.02 129.61 79.94 129.61 199.02 10.53"/>
+      <polygon points="224.54 70.07 284.08 10.53 224.54 10.53 224.54 70.07"/>
+      <polygon points="343.62 70.07 343.62 10.53 284.08 10.53 284.08 70.07 224.54 129.61 224.54 189.16 284.08 189.16 284.08 129.61 343.62 70.07"/>
+      <polygon points="343.62 129.61 284.08 189.16 343.62 189.16 343.62 129.61"/>
+    </g>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <rect width="400" height="400" fill="url(#scan)"/>
+  <text x="10" y="30" font-family="monospace" font-size="14" fill="#00ff66" opacity="0.35">101010</text>
+  <text x="10" y="385" font-family="monospace" font-size="14" fill="#00ff66" opacity="0.35">ft_NFT</text>
+
+  <g transform="translate(70,108.75) scale(0.8045) translate(-20.39,-10.53)" filter="url(#glow)">
+    <use href="#mark" fill="#ff2b6d" transform="translate(-5,0)" opacity="0.75"/>
+    <use href="#mark" fill="#00e5ff" transform="translate(5,3)" opacity="0.75"/>
+    <use href="#mark" fill="#00ff66"/>
+  </g>
+</svg>
