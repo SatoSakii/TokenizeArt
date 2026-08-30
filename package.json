@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"description": "Un token ERC721 simple appelé ALB42NFT",
 	 "scripts": {
-		"setup": "cd code && cd nft && npm install && ln -s ../code/nft/node_modules ../../../deployment/node_modules",
-		"deploy": "cd code && cd nft && npx hardhat run ../../../deployment/deploy.ts --network sepolia",
-		"compile": "cd code && cd nft && npx hardhat compile"
+		"setup": "cd code/nft && npm install && ln -s ../code/nft/node_modules ../../deployment/node_modules",
+		"deploy": "cd code/nft && npx hardhat run ../deployment/deploy.ts --network sepolia",
+		"compile": "cd code/nft && npx hardhat compile"
 	}
 }
