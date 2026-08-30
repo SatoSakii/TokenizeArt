@@ -3,7 +3,7 @@
 import { cx } from "@/components/ui";
 
 type Props = {
-	/** SVG brut (apercu local) — utilise si `image` n est pas fourni. */
+	/** SVG brut (apercu local) - utilise si `image` n est pas fourni. */
 	svg?: string;
 	/** Data URI renvoyee par le contrat (token deja minte). */
 	image?: string;

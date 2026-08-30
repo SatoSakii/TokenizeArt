@@ -15,7 +15,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "ALB42NFT — mint on-chain",
+	title: "ALB42NFT - mint on-chain",
 	description:
 		"Interface de mint du ALB42NFT : un ERC-721 dont l'image et les metadonnees sont stockees entierement on-chain, sur le testnet Sepolia.",
 };

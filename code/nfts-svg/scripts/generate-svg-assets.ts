@@ -18,7 +18,7 @@ const solContent = `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.34;
 
 // Fichier généré automatiquement depuis nfts-svg/ par scripts/generate-svg-assets.ts
-// Ne pas éditer directement — relancer le script après modification d'un SVG source.
+// Ne pas éditer directement - relancer le script après modification d'un SVG source.
 library SvgAssets {
     string internal constant LGBT = '${lgbt}';
     string internal constant MATRIX = '${matrix}';

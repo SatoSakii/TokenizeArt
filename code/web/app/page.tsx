@@ -156,12 +156,12 @@ export default function Home() {
 					<div className="mx-auto max-w-6xl px-5 grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-line">
 						<Stat
 							label="Tokens mintes"
-							value={collection.loading && !collection.supply ? "—" : collection.supply}
+							value={collection.loading && !collection.supply ? "-" : collection.supply}
 							hint="nextTokenId − 1"
 						/>
 						<Stat
 							label="Ton solde"
-							value={ownBalance === null ? "—" : ownBalance}
+							value={ownBalance === null ? "-" : ownBalance}
 							hint="balanceOf(toi)"
 						/>
 						<Stat
@@ -178,7 +178,7 @@ export default function Home() {
 										{shortAddress(collection.contractOwner)}
 									</a>
 								) : (
-									"—"
+									"-"
 								)
 							}
 							hint="seul autorise a minter"

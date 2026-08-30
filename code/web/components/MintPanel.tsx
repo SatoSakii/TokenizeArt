@@ -112,7 +112,7 @@ export function MintPanel({
 			<div className="border border-line bg-surface">
 				{/* Choix du style : l index correspond a l enum du contrat (0/1/2). */}
 				<div className="px-5 pt-5 pb-4 border-b border-line">
-					<Label>01 — Style de l&apos;oeuvre</Label>
+					<Label>01 - Style de l&apos;oeuvre</Label>
 
 					<div className="mt-4 grid grid-cols-3 gap-2">
 						{STYLES.map((style) => {
@@ -155,7 +155,7 @@ export function MintPanel({
 				{/* Destinataire du mint. */}
 				<div className="px-5 py-5 border-b border-line">
 					<div className="flex items-center justify-between gap-3">
-						<Label>02 — Destinataire</Label>
+						<Label>02 - Destinataire</Label>
 
 						{wallet.address ? (
 							<button
@@ -189,7 +189,7 @@ export function MintPanel({
 
 				{/* Action + garde-fous. */}
 				<div className="px-5 py-5">
-					<Label>03 — Mint</Label>
+					<Label>03 - Mint</Label>
 
 					<Button
 						onClick={() => void mint()}
@@ -275,7 +275,7 @@ function Gate({
 	if (status === "pending" && txHash) {
 		return (
 			<Notice tone="warn">
-				Transaction envoyee, en attente d&apos;un bloc —{" "}
+				Transaction envoyee, en attente d&apos;un bloc -{" "}
 				<a
 					href={txUrl(txHash)}
 					target="_blank"
@@ -291,7 +291,7 @@ function Gate({
 	if (!wallet.hasProvider) {
 		return (
 			<Notice tone="idle">
-				Aucun wallet detecte dans ce navigateur. Installe MetaMask pour minter — la
+				Aucun wallet detecte dans ce navigateur. Installe MetaMask pour minter - la
 				collection reste consultable sans wallet.
 			</Notice>
 		);
@@ -340,7 +340,7 @@ function Gate({
 
 	return (
 		<Notice tone="live">
-			Wallet owner reconnu — le mint coutera uniquement du gas de test {CHAIN_NAME}.
+			Wallet owner reconnu - le mint coutera uniquement du gas de test {CHAIN_NAME}.
 		</Notice>
 	);
 }
