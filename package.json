@@ -6,6 +6,7 @@
 		"setup": "cd code/nft && npm install && ln -s ../code/nft/node_modules ../../deployment/node_modules && ln -s ../code/nft/node_modules ../../mint/node_modules",
 		"deploy": "cd code/nft && npx hardhat run ../../deployment/deploy.ts --network sepolia",
 		"compile": "cd code/nft && npx hardhat compile",
-		"mint": "cd code/nft && npx hardhat run ../../mint/mint.ts --network sepolia"
+		"mint": "cd code/nft && npx hardhat run ../../mint/mint.ts --network sepolia",
+		"web": "cd code/web && npm run dev"
 	}
 }
