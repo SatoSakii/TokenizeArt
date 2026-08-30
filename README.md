@@ -21,7 +21,7 @@ Une collection **ERC-721** générée et stockée **entièrement on-chain** (auc
 | Nom | ALB42NFT |
 | Standard | ERC-721 |
 | Réseau | Sepolia (Ethereum Testnet) |
-| Adresse | [`0x85FC0D33d5b335F6007D8b02eF23f5F145C15338`](https://sepolia.etherscan.io/address/0x85FC0D33d5b335F6007D8b02eF23f5F145C15338) |
+| Adresse | [`0x75af40aFF0472D3Ba694eC5c699A5436720A7665`](https://sepolia.etherscan.io/address/0x75af40aFF0472D3Ba694eC5c699A5436720A7665) |
 | Code source | ✅ Vérifié sur Etherscan |
 | Métadonnées | 100% on-chain (Data URI base64, pas d'IPFS) |
 

@@ -15,7 +15,7 @@ const YELLOW = "\x1b[33m";
 const MAGENTA = "\x1b[35m";
 
 // Adresse du contrat ALB42NFT déjà déployé sur Sepolia.
-const NFT_ADDRESS = "0x85FC0D33d5b335F6007D8b02eF23f5F145C15338";
+const NFT_ADDRESS = "0x75af40aFF0472D3Ba694eC5c699A5436720A7665";
 
 // Styles disponibles, dans le même ordre que le mapping styleOf du contrat.
 const STYLES = [
