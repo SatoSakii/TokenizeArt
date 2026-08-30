@@ -49,6 +49,70 @@ contract ALB42NFT
 		owner = msg.sender;
 	}
 
+	// Fonction pour générer les métadonnées d'un token spécifique
+	function tokenURI(uint256 tokenId) public view returns (string memory)
+	{
+		// Vérifie que le token existe en s'assurant que l'adresse du propriétaire
+		require(ownerOf[tokenId] != address(0), "Le token n'existe pas.");
+
+		// Génère le SVG correspondant au style du token
+		string memory svg = _svgFor(styleOf[tokenId]);
+
+		// Encode le SVG en base64 pour l'inclure dans les métadonnées
+		string memory svgBase64 = Base64.encode(bytes(svg));
+
+		// Génère les métadonnées JSON du token, incluant le nom,
+		// la description et l'image encodée en base64
+		string memory json = string(
+			abi.encodePacked(
+				'{"name":"ALB42NFT #', _toString(tokenId), '",',
+				'"description":"Un NFT ALB42, genere et stocke entierement on-chain.",',
+				'"image":"data:image/svg+xml;base64,', svgBase64, '"}'
+			)
+		);
+
+		// Encode les métadonnées JSON en base64 pour l'inclure dans l'URI du token
+		string memory jsonBase64 = Base64.encode(bytes(json));
+
+		return string(abi.encodePacked("data:application/json;base64,", jsonBase64));
+	}
+
+	// Fonction pour transformer un entier en chaîne de caractères
+	function _toString(uint256 value) internal pure returns (string memory)
+	{
+		// Cas particulier : 0 n'a pas de "premier chiffre" à extraire par la boucle
+		if (value == 0)
+			return "0";
+
+		// Étape 1 : compter combien de chiffres value contient,
+		// pour savoir quelle taille donner au buffer final
+		uint256 temp = value;
+		uint256 digits = 0;
+
+		while (temp != 0)
+		{
+			digits++;
+			temp /= 10;
+		}
+
+		// Étape 2 : créer un buffer de la bonne taille exacte,
+		// et le remplir en partant de la fin pour éviter d'avoir à inverser après
+
+		bytes memory buffer = new bytes(digits);
+
+		while (value != 0)
+		{
+			digits -= 1;
+
+			// value % 10 donne le chiffre des unités (0 à 9)
+			// + 48 (code ASCII de '0') le transforme en caractère '0'-'9'
+			buffer[digits] = bytes1(uint8(48 + (value % 10)));
+			value /= 10;
+		}
+
+		return string(buffer);
+	}
+
 	// Fonction pour récupérer le style d'un token spécifique
 	function getStyle(uint256 tokenId) public view returns (uint8)
 	{
