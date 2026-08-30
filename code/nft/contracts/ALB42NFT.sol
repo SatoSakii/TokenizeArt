@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.34;
 
+import "./utils/Base64.sol";
+
 interface IERC721Receiver
 {
 	// Cette fonction est appelée lorsqu'un token ERC721 est transféré à ce contrat.
