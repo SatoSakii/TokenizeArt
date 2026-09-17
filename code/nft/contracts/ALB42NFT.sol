@@ -67,7 +67,7 @@ contract ALB42NFT
 			abi.encodePacked(
 				'{"name":"ALB42NFT #', _toString(tokenId), '",',
 				'"description":"Un NFT ALB42, genere et stocke entierement on-chain.",',
-				'"attributes":[{"trait_type":"Artist","value":"albernar"},',
+				'"attributes":[{"trait_type":"Artist","value":"albernar"}],',
 				'"image":"data:image/svg+xml;base64,', svgBase64, '"}'
 			)
 		);

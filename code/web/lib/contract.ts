@@ -1,7 +1,7 @@
 import { Contract, JsonRpcProvider, type Provider, type Signer } from "ethers";
 
 // Adresse du contrat ALB42NFT deploye sur le testnet Sepolia.
-export const NFT_ADDRESS = "0x75af40aFF0472D3Ba694eC5c699A5436720A7665";
+export const NFT_ADDRESS = "0xa93A8D0891B55c38A975F68cCa1768BEaEBD438b";
 
 // Sepolia : 11155111 en decimal, 0xaa36a7 en hexadecimal (format attendu par MetaMask).
 export const CHAIN_ID = 11155111;
